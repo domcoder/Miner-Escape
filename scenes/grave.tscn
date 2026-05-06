@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dynlihgj5tjch"]
+
+[ext_resource type="Script" uid="uid://e7shi4mqnlfx" path="res://scripts/grave.gd" id="1_mlivn"]
+[ext_resource type="Texture2D" uid="uid://bdr0t2nv0hnfr" path="res://assets/16 Bit Tileset.png" id="1_qpo7b"]
+[ext_resource type="Resource" uid="uid://b3v1ckejhmx3y" path="res://data/chalice.tres" id="2_inmiy"]
+[ext_resource type="AudioStream" uid="uid://biwhuh346g6cw" path="res://assets/pipe.mp3" id="4_lhpym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlivn"]
+atlas = ExtResource("1_qpo7b")
+region = Rect2(2, 113, 12, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_inmiy"]
+radius = 5.0
+
+[node name="Grave" type="StaticBody2D" unique_id=63265538 node_paths=PackedStringArray("sprite_2d", "grave_break_sound", "collision_shape_2d")]
+script = ExtResource("1_mlivn")
+data = ExtResource("2_inmiy")
+sprite_2d = NodePath("Sprite2D")
+grave_break_sound = NodePath("GraveBreakSound")
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1418288017]
+texture = SubResource("AtlasTexture_mlivn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747301526]
+shape = SubResource("CircleShape2D_inmiy")
+
+[node name="GraveBreakSound" type="AudioStreamPlayer2D" parent="." unique_id=1037626305]
+stream = ExtResource("4_lhpym")
+volume_db = -20.0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="pickup_data" format=3 uid="uid://berbvphu12dwc"]
+
+[ext_resource type="Script" uid="uid://c7i7plbaufkn1" path="res://scripts/loot_data.gd" id="1_jxewc"]
+[ext_resource type="Texture2D" uid="uid://bdr0t2nv0hnfr" path="res://assets/16 Bit Tileset.png" id="2_js6nu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hph0y"]
+atlas = ExtResource("2_js6nu")
+region = Rect2(50, 113, 12, 14)
+
+[resource]
+script = ExtResource("1_jxewc")
+name = "chalice_pickup"
+texture = SubResource("AtlasTexture_hph0y")
+value = 50
+metadata/_custom_type_script = "uid://c7i7plbaufkn1"

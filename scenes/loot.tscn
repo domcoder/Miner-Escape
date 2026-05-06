@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c4c5ox10ktdo0"]
+
+[ext_resource type="Script" uid="uid://b5kl63jboxi41" path="res://scripts/loot.gd" id="1_o0pg5"]
+[ext_resource type="Texture2D" uid="uid://bdr0t2nv0hnfr" path="res://assets/16 Bit Tileset.png" id="1_xofgn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0pg5"]
+atlas = ExtResource("1_xofgn")
+region = Rect2(67, 114, 11, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_30m34"]
+radius = 5.0
+
+[node name="Loot" type="Area2D" unique_id=1123482279 node_paths=PackedStringArray("sprite_2d")]
+script = ExtResource("1_o0pg5")
+sprite_2d = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=719308851]
+texture = SubResource("AtlasTexture_o0pg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1871232697]
+shape = SubResource("CircleShape2D_30m34")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

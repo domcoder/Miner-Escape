@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GraveData" format=3 uid="uid://b3v1ckejhmx3y"]
+
+[ext_resource type="Resource" uid="uid://berbvphu12dwc" path="res://data/chalice_pickup.tres" id="1_4b6gw"]
+[ext_resource type="Script" uid="uid://i6ys63b36pgk" path="res://scripts/grave_data.gd" id="1_yukd8"]
+[ext_resource type="Texture2D" uid="uid://bdr0t2nv0hnfr" path="res://assets/16 Bit Tileset.png" id="2_0eau6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b6gw"]
+atlas = ExtResource("2_0eau6")
+region = Rect2(3, 52, 9, 11)
+
+[resource]
+script = ExtResource("1_yukd8")
+texture = SubResource("AtlasTexture_4b6gw")
+max_health = 5
+rarity = 25
+min_depth = 3
+grave_resource = ExtResource("1_4b6gw")
+metadata/_custom_type_script = "uid://i6ys63b36pgk"

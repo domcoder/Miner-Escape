@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b54rgensbwy0g"]
+
+[ext_resource type="PackedScene" uid="uid://dynlihgj5tjch" path="res://scenes/grave.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dgt3vxro0p0m6" path="res://scenes/player.tscn" id="2_w8frs"]
+[ext_resource type="Resource" uid="uid://dw7qu8sp5ydoc" path="res://data/grave.tres" id="3_w8frs"]
+
+[node name="Level" type="Node2D" unique_id=202776268]
+
+[node name="Player" parent="." unique_id=225126369 instance=ExtResource("2_w8frs")]
+position = Vector2(47, 45)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=892570868]
+position = Vector2(1, 1)
+
+[node name="GraveContainer" type="Node2D" parent="." unique_id=1192177043]
+
+[node name="Grave" parent="GraveContainer" unique_id=63265538 instance=ExtResource("1_w7c3h")]
+position = Vector2(94, 101)
+
+[node name="Grave2" parent="GraveContainer" unique_id=1572979329 instance=ExtResource("1_w7c3h")]
+position = Vector2(18, 92)
+data = ExtResource("3_w8frs")
+
+[node name="Grave3" parent="GraveContainer" unique_id=1410205022 instance=ExtResource("1_w7c3h")]
+position = Vector2(57, 15)
+data = ExtResource("3_w8frs")
+
+[node name="LootContainer" type="Node2D" parent="." unique_id=422569094]

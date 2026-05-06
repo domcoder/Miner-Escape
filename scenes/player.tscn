@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dgt3vxro0p0m6"]
+
+[ext_resource type="Texture2D" uid="uid://bs8qh1sp8d32" path="res://assets/Characters.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c2osnsm1xjd4w" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://b21fc5oq16vxn" path="res://assets/thunk.mp3" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=225126369 node_paths=PackedStringArray("hitbox", "collision_shape_2d", "thunk_sound")]
+z_index = 5
+script = ExtResource("1_g2els")
+hitbox = NodePath("Hitbox")
+collision_shape_2d = NodePath("Hitbox/CollisionShape2D")
+thunk_sound = NodePath("ThunkSound")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472926285]
+texture = SubResource("AtlasTexture_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=717261035]
+shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=685106179]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1388894388]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="ThunkSound" type="AudioStreamPlayer2D" parent="." unique_id=949704152]
+stream = ExtResource("3_qhqgy")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
